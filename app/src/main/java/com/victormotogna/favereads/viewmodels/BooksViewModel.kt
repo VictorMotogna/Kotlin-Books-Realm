@@ -3,7 +3,7 @@ package com.victormotogna.favereads.viewmodels
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import android.util.Log
-import com.victormotogna.favereads.api.BooksApi
+import com.victormotogna.favereads.dal.api.BooksApi
 import com.victormotogna.favereads.model.Book
 import org.koin.standalone.KoinComponent
 import org.koin.standalone.inject

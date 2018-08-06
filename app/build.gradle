@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 27
@@ -51,6 +51,6 @@ dependencies {
     implementation "org.koin:koin-android:$koin_version"
 
     // koi
-    compile 'com.mcxiaoke.koi:core:0.5.5' // useful extensions (only ~100k)
-    compile 'com.mcxiaoke.koi:async:0.5.5' // async functions (only ~70k
+    implementation 'com.mcxiaoke.koi:core:0.5.5'
+    implementation 'com.mcxiaoke.koi:async:0.5.5'
 }

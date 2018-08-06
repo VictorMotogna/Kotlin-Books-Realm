@@ -1,6 +1,7 @@
 package com.victormotogna.favereads.injection
 
-import com.victormotogna.favereads.api.BooksApi
+import com.victormotogna.favereads.dal.api.BooksApi
+import com.victormotogna.favereads.dal.local.RealmManager
 import com.victormotogna.favereads.viewmodels.BooksViewModel
 import org.koin.android.architecture.ext.viewModel
 import org.koin.dsl.module.Module
@@ -10,6 +11,10 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object AppModules {
+
+    private val realmModule: Module = applicationContext {
+        bean { RealmManager() }
+    }
 
     private val viewModelModule: Module = applicationContext {
         viewModel { BooksViewModel() }
@@ -28,5 +33,5 @@ object AppModules {
         bean { BooksApi::class }
     }
 
-    val modules = listOf(retrofitModule, viewModelModule)
+    val modules = listOf(retrofitModule, viewModelModule, realmModule)
 }

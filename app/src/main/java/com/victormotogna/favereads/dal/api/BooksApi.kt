@@ -1,4 +1,4 @@
-package com.victormotogna.favereads.api
+package com.victormotogna.favereads.dal.api
 
 import com.victormotogna.favereads.model.Book
 import retrofit2.Call
