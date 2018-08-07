@@ -1,99 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:layout_marginTop="4dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
     android:layout_marginEnd="12dp"
     android:layout_marginStart="12dp"
-    android:layout_marginBottom="4dp"
-    app:cardCornerRadius="12dp"
-    android:layout_gravity="center"
-    android:gravity="center">
+    android:layout_marginTop="4dp"
+    android:gravity="center"
+    app:cardCornerRadius="12dp">
+
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/author_and_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp">
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/author_and_title"
-            android:layout_width="match_parent"
+        <android.support.constraint.Guideline
+            android:id="@+id/middle_guideline"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
-            android:paddingTop="14dp"
-            android:paddingEnd="14dp"
-            android:paddingStart="14dp">
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
 
-            <TextView
-                android:id="@+id/book_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ender's Game"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/book_author"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="84dp"
-                android:text="Orson Scott Card"
-                android:textSize="14dp"
-                app:layout_constraintBaseline_toBaselineOf="@id/book_title"
-                app:layout_constraintLeft_toRightOf="@+id/book_title" />
-        </android.support.constraint.ConstraintLayout>
-
-
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/book_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/author_and_title"
-            app:layout_constraintStart_toStartOf="@+id/author_and_title"
-            android:paddingTop="14dp"
-            android:paddingEnd="14dp"
-            android:paddingStart="14dp">
+            android:padding="4dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            tools:text="Ender's Game" />
 
-            <TextView
-                android:id="@+id/book_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:text="Description 1"
-                android:textSize="14dp" />
+        <TextView
+            android:id="@+id/book_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/book_title"
+            tools:text="Orson Scott Card" />
 
-            <TextView
-                android:id="@+id/book_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="52dp"
-                android:text="69"
-                android:textSize="15dp"
-                app:layout_constraintBaseline_toBaselineOf="@id/book_description"
-                app:layout_constraintLeft_toRightOf="@+id/book_description" />
+        <TextView
+            android:id="@+id/book_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/book_title"
+            tools:text="Description 1" />
 
-            <TextView
-                android:id="@+id/dollars"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="4dp"
-                android:text="$"
-                android:textColor="#008000"
-                android:textSize="16dp"
-                app:layout_constraintBaseline_toBaselineOf="@id/book_price"
-                app:layout_constraintLeft_toRightOf="@+id/book_price" />
+        <TextView
+            android:id="@+id/book_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@id/middle_guideline"
+            app:layout_constraintTop_toTopOf="@id/book_description"
+            tools:text="69" />
 
-            <Button
-                android:id="@+id/btn_fave"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@drawable/star_stroke"
-                app:layout_constraintBaseline_toBaselineOf="@id/book_price"
-                app:layout_constraintLeft_toRightOf="@id/dollars" />
+        <TextView
+            android:id="@+id/dollars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#008000"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/book_price"
+            app:layout_constraintLeft_toRightOf="@+id/book_price"
+            android:text="$" />
 
-        </android.support.constraint.ConstraintLayout>
-
+        <Button
+            android:id="@+id/btn_fave"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/star_stroke"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/book_description" />
     </android.support.constraint.ConstraintLayout>
-
 </android.support.v7.widget.CardView>
