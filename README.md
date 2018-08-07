@@ -30,9 +30,8 @@ Favorite books android application written in Kotlin
 
 - https://5b687512629e280014570d37.mockapi.io/booksapi/books
 
-- list of `books` of type
+- list of `books` like this:
 
--
 ```
 {
 id: "1",
